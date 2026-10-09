@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page-shell" data-form-version="1.0">
+    <section class="form-card" aria-labelledby="pageTitle">
+      <div class="brand-row">
+        <div class="brand-mark" aria-hidden="true">SR</div>
+        <div>
+          <p class="eyebrow">STUDENT SERVICES</p>
+          <h1 id="pageTitle">Student Registration</h1>
+        </div>
+      </div>
+
+      <p class="intro">Complete the form below to register your student information. Fields marked with <span class="required-mark">*</span> are required.</p>
+
+      <div id="successMessage" class="success-message" role="status" aria-live="polite"></div>
+
+      <form id="registrationForm" novalidate>
+        <div class="section-heading">
+          <span class="section-number">01</span>
+          <div>
+            <h2>Personal Information</h2>
+            <p>Tell us about yourself.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="studentId">Student ID <span class="required-mark">*</span></label>
+            <input id="studentId" name="studentId" type="text" placeholder="e.g. 2026-00123" autocomplete="off" data-field="student-id" data-trim="true" data-label="Student ID" data-hint="Enter your school-issued ID, for example 2026-00123." data-error="Please enter your student ID." aria-describedby="studentIdError">
+            <small class="field-error" id="studentIdError"></small>
+          </div>
+
+          <div class="form-field">
+            <label for="fullName">Full Name <span class="required-mark">*</span></label>
+            <input id="fullName" name="fullName" type="text" placeholder="Enter your full name" autocomplete="name" data-field="full-name" data-trim="true" data-error="Please enter your full name." aria-describedby="fullNameError">
+            <small class="field-error" id="fullNameError"></small>
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email Address <span class="required-mark">*</span></label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" data-field="email" data-trim="true" data-error="Please enter your email address." aria-describedby="emailError">
+            <small class="field-error" id="emailError"></small>
+          </div>
+
+          <div class="form-field">
+            <label for="phone">Phone Number <span class="required-mark">*</span></label>
+            <input id="phone" name="phone" type="tel" placeholder="09XXXXXXXXX" autocomplete="tel" inputmode="tel" data-field="phone" data-trim="true" data-error="Please enter your phone number." aria-describedby="phoneError">
+            <small class="hint">Use 09XXXXXXXXX or +639XXXXXXXXX.</small>
+            <small class="field-error" id="phoneError"></small>
+          </div>
+
+          <div class="form-field">
+            <label for="dob">Date of Birth <span class="required-mark">*</span></label>
+            <input id="dob" name="dob" type="date" data-field="date-of-birth" data-error="Please select your date of birth." aria-describedby="dobError">
+            <small class="field-error" id="dobError"></small>
+          </div>
+
+          <div class="form-field">
+            <label>Gender <span class="required-mark">*</span></label>
+            <div class="radio-options" id="gender" data-field="gender" data-error="Please select your gender." role="group" aria-describedby="genderError">
+              <label class="radio-option"><input type="radio" name="gender" value="Female"> <span>Female</span></label>
+              <label class="radio-option"><input type="radio" name="gender" value="Male"> <span>Male</span></label>
+              <label class="radio-option"><input type="radio" name="gender" value="Prefer not to say"> <span>Prefer not to say</span></label>
+            </div>
+            <small class="field-error" id="genderError"></small>
+          </div>
+        </div>
+
+        <div class="section-heading second-heading">
+          <span class="section-number">02</span>
+          <div>
+            <h2>Academic Information</h2>
+            <p>Choose your current program and year level.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="program">Program <span class="required-mark">*</span></label>
+            <select id="program" name="program" data-field="program" data-error="Please select your program." aria-describedby="programError">
+              <option value="">Select a program</option>
+              <option value="BS Information Technology">BS Information Technology</option>
+              <option value="BS Computer Science">BS Computer Science</option>
+              <option value="BS Information Systems">BS Information Systems</option>
+              <option value="BS Business Administration">BS Business Administration</option>
+              <option value="Bachelor of Elementary Education">Bachelor of Elementary Education</option>
+              <option value="Bachelor of Secondary Education">Bachelor of Secondary Education</option>
+            </select>
+            <small class="field-error" id="programError"></small>
+          </div>
+
+          <div class="form-field">
+            <label for="yearLevel">Year Level <span class="required-mark">*</span></label>
+            <select id="yearLevel" name="yearLevel" data-field="year-level" data-error="Please select your year level." aria-describedby="yearLevelError">
+              <option value="">Select a year level</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+              <option value="5th Year">5th Year</option>
+            </select>
+            <small class="field-error" id="yearLevelError"></small>
+          </div>
+        </div>
+
+        <div class="section-heading second-heading">
+          <span class="section-number">03</span>
+          <div>
+            <h2>Account and Contact</h2>
+            <p>Create a password and enter your address.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="password">Password <span class="required-mark">*</span></label>
+            <div class="password-wrap">
+              <input id="password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" data-field="password" data-error="Please enter a password." aria-describedby="passwordError">
+              <button class="show-password" id="togglePassword" type="button" data-target="password" aria-pressed="false">Show</button>
+            </div>
+            <small class="field-error" id="passwordError"></small>
+          </div>
+
+          <div class="form-field">
+            <label for="confirmPassword">Confirm Password <span class="required-mark">*</span></label>
+            <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-enter your password" autocomplete="new-password" data-field="confirm-password" data-error="Please confirm your password." aria-describedby="confirmPasswordError">
+            <small class="field-error" id="confirmPasswordError"></small>
+          </div>
+
+          <div class="form-field full-width">
+            <label for="address">Home Address <span class="required-mark">*</span></label>
+            <textarea id="address" name="address" rows="3" placeholder="House number, street, barangay, city or municipality" autocomplete="street-address" data-field="address" data-trim="true" data-error="Please enter your home address." aria-describedby="addressError"></textarea>
+            <small class="field-error" id="addressError"></small>
+          </div>
+        </div>
+
+        <div class="agreement-block">
+          <label class="checkbox-row" for="agreement">
+            <input id="agreement" name="agreement" type="checkbox" data-field="agreement" data-error="You must agree before registering." aria-describedby="agreementError">
+            <span>I confirm that the information I provided is correct and agree to the use of my information for student registration.</span>
+          </label>
+          <small class="field-error" id="agreementError"></small>
+        </div>
+
+        <div class="button-row">
+          <button class="reset-button" type="reset" id="resetButton">Reset Form</button>
+          <button class="submit-button" type="submit">Submit Registration <span aria-hidden="true">→</span></button>
+        </div>
+        
+      </form>
+    </section>
+    <footer class="page-footer">WS 301 · Form Validation Performance Task by Razelle villahermosa Bustalinio</footer>
+  </main>
+</body>
+</html>
